@@ -49,10 +49,10 @@ def backwards_elimination(data):
     best_feature_set = []
     current_features = [i for i in range(1, len(data[0]))]
     starting_time = time.time()
-    for i in range(1, len(data[0]) - 1):
+    for i in range(1, len(data[0])):
         feature_pop = 0
         local_best_acc = 0.0
-        for k in range(1, len(data[0]) - 1):
+        for k in range(1, len(data[0])):
             if k in current_features:
                 print("--Considering adding feature ", k)
                 acc = find_accuracy(current_features, data, k, 2)
