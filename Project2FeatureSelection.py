@@ -13,7 +13,7 @@ def main():
     return
 
 def select_algorithm():
-    algorithm = input("Select the algorithm you wish to use: " + '\n' +
+    algorithm = input("Please decide the algorithm you want to use: " + '\n' +
                       "1. Forward Selection" + '\n' +
                       "2. Backwards Elimination" + '\n' 
                       )  
@@ -35,7 +35,7 @@ def forward_selection(data):
                     best_accuracy_local = accuracy
                     adding_feature = k
         current_features.append(adding_feature) 
-        print("On level ", i, " I added feature ", adding_feature, " to the current set")
+        print("On level ", i, " I add the feature ", adding_feature, " to the current set")
         print("With ", len(current_features), " features, the accuracy is: ", best_accuracy_local * 100, "%")
         if best_accuracy_global >= best_accuracy_global: 
             best_accuracy_global = best_accuracy_local
@@ -61,7 +61,7 @@ def backwards_elimination(data):
                     feature_pop = k
         if feature_pop in current_features: 
             current_features.remove(feature_pop)
-            print("On level ", i, " feature ", feature_pop, " was removed from the current set")
+            print("On the level ", i, " the feature ", feature_pop, " is being removed from the current feauture set")
             print("With ", len(current_features), " features, the accuracy is: ", local_best_acc * 100, "%")
         if local_best_acc >= best_accuracy_global:
             best_accuracy_global = local_best_acc
