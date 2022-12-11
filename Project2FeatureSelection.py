@@ -41,7 +41,7 @@ def forward_selection(data):
             best_accuracy_global = best_accuracy_local
             best_feature_set = list(current_features)
     ending_time = time.time()
-    print("Set of features used: ", best_feature_set, "at accuracy: ", best_accuracy_global * 100, '\n', "Elapsed time: ", ending_time - starting_time)
+    print("Set of features used: ", best_feature_set, "at accuracy: ", best_accuracy_global * 100, '\n', "Time passed: ", ending_time - starting_time)
     return
 
 def backwards_elimination(data):
@@ -61,7 +61,7 @@ def backwards_elimination(data):
                     feature_pop = k
         if feature_pop in current_features: 
             current_features.remove(feature_pop)
-            print("On the level ", i, " the feature ", feature_pop, " is being removed from the current feauture set")
+            print("On the level ", i, " the feature ", feature_pop, " is removed from the feauture set")
             print("With ", len(current_features), " features, the accuracy is: ", local_best_acc * 100, "%")
         if local_best_acc >= best_accuracy_global:
             best_accuracy_global = local_best_acc
